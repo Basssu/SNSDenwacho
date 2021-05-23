@@ -13,6 +13,8 @@
 		C5B5F78E2657FA5700380EC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B5F78C2657FA5700380EC3 /* Main.storyboard */; };
 		C5B5F7902657FA5B00380EC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B5F78F2657FA5B00380EC3 /* Assets.xcassets */; };
 		C5B5F7932657FA5B00380EC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B5F7912657FA5B00380EC3 /* LaunchScreen.storyboard */; };
+		C5DC3754265A3943002051B8 /* friendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC3753265A3943002051B8 /* friendListViewController.swift */; };
+		C5DC3757265A3F6F002051B8 /* friendListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC3756265A3F6F002051B8 /* friendListViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		C5B5F78F2657FA5B00380EC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5B5F7922657FA5B00380EC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5B5F7942657FA5B00380EC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5DC3753265A3943002051B8 /* friendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendListViewController.swift; sourceTree = "<group>"; };
+		C5DC3756265A3F6F002051B8 /* friendListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendListViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				C5B5F7882657FA5700380EC3 /* SceneDelegate.swift */,
 				C5B5F78A2657FA5700380EC3 /* ViewController.swift */,
 				C5B5F78C2657FA5700380EC3 /* Main.storyboard */,
+				C5DC3753265A3943002051B8 /* friendListViewController.swift */,
+				C5DC3756265A3F6F002051B8 /* friendListViewCell.swift */,
 				C5B5F78F2657FA5B00380EC3 /* Assets.xcassets */,
 				C5B5F7912657FA5B00380EC3 /* LaunchScreen.storyboard */,
 				C5B5F7942657FA5B00380EC3 /* Info.plist */,
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5DC3754265A3943002051B8 /* friendListViewController.swift in Sources */,
 				C5B5F78B2657FA5700380EC3 /* ViewController.swift in Sources */,
 				C5B5F7872657FA5700380EC3 /* AppDelegate.swift in Sources */,
+				C5DC3757265A3F6F002051B8 /* friendListViewCell.swift in Sources */,
 				C5B5F7892657FA5700380EC3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

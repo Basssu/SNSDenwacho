@@ -204,9 +204,9 @@
                                         <rect key="frame" x="0.0" y="654.5" width="414" height="81.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5Z-7D-STH">
-                                                <rect key="frame" x="184" y="43" width="46" height="30"/>
+                                                <rect key="frame" x="108" y="43" width="199" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="この情報を設定して始める！">
                                                     <color key="titleColor" red="0.38844230769999999" green="0.2532380521" blue="0.7255328298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                             </button>

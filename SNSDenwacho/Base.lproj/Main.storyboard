@@ -356,6 +356,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <segue destination="OZw-5t-hTg" kind="show" id="ZUm-HQ-crg"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="マイQR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGc-tq-M2m">
                                                                 <rect key="frame" x="0.0" y="82" width="82" height="30"/>
@@ -382,15 +385,15 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xdD-Vd-PV9">
                                                         <rect key="frame" x="166" y="0.0" width="82" height="112"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zfb-JY-taY">
-                                                                <rect key="frame" x="0.0" y="1" width="82" height="79.5"/>
-                                                                <color key="backgroundColor" red="0.92159587139999999" green="0.92154115439999995" blue="0.92157012220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zfb-JY-taY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Zfb-JY-taY" secondAttribute="height" multiplier="1:1" id="PV6-2i-7mP"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="tintColor" systemColor="labelColor"/>
-                                                                <state key="normal" backgroundImage="qrcode" catalog="system"/>
+                                                                <state key="normal" image="instagramLogo"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                         <integer key="value" value="10"/>
@@ -411,15 +414,17 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="90h-ot-QT8">
                                                         <rect key="frame" x="69" y="0.0" width="82" height="112"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhi-xu-kdZ">
-                                                                <rect key="frame" x="0.0" y="1" width="82" height="79.5"/>
-                                                                <color key="backgroundColor" red="0.92159587139999999" green="0.92154115439999995" blue="0.92157012220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhi-xu-kdZ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="jhi-xu-kdZ" secondAttribute="height" multiplier="1:1" id="pbl-DQ-ILf"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="tintColor" systemColor="labelColor"/>
-                                                                <state key="normal" backgroundImage="qrcode" catalog="system"/>
+                                                                <state key="normal" image="twitterLogo">
+                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                                </state>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                         <integer key="value" value="10"/>
@@ -441,14 +446,14 @@
                                                         <rect key="frame" x="263" y="0.0" width="82" height="112"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhx-sD-uuS">
-                                                                <rect key="frame" x="0.0" y="1" width="82" height="79.5"/>
-                                                                <color key="backgroundColor" red="0.92159587139999999" green="0.92154115439999995" blue="0.92157012220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Dhx-sD-uuS" secondAttribute="height" multiplier="1:1" id="ipL-Wm-cIf"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="tintColor" systemColor="labelColor"/>
-                                                                <state key="normal" backgroundImage="qrcode" catalog="system"/>
+                                                                <state key="normal" image="facebookLogo"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                         <integer key="value" value="10"/>
@@ -530,10 +535,78 @@
             </objects>
             <point key="canvasLocation" x="3302.898550724638" y="431.91964285714283"/>
         </scene>
+        <!--マイQR-->
+        <scene sceneID="C9n-HC-Hqv">
+            <objects>
+                <viewController id="OZw-5t-hTg" customClass="MyQRCodeViewController" customModule="SNSDenwacho" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zoh-NL-av2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SJa-LQ-uFh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHX-ok-Qyh" userLabel="verticalSpacer">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="36.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckm-Fa-tzX">
+                                        <rect key="frame" x="0.0" y="36.5" width="414" height="108.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9y-UD-Rwd" userLabel="verticalSpacer">
+                                        <rect key="frame" x="0.0" y="145" width="414" height="36.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="田中太郎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-9c-Rbf">
+                                        <rect key="frame" x="0.0" y="181.5" width="414" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ine-Pt-z6F" userLabel="verticalSpacer">
+                                        <rect key="frame" x="0.0" y="217.5" width="414" height="72.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2NS-HM-2D3">
+                                        <rect key="frame" x="0.0" y="290" width="414" height="254"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z9X-cw-bVS" userLabel="verticalSpacer">
+                                        <rect key="frame" x="0.0" y="544" width="414" height="181"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ckm-Fa-tzX" firstAttribute="height" secondItem="SJa-LQ-uFh" secondAttribute="height" multiplier="3:20" id="007-6m-Ras"/>
+                                    <constraint firstItem="DHX-ok-Qyh" firstAttribute="height" secondItem="SJa-LQ-uFh" secondAttribute="height" multiplier="1:20" id="31S-B4-lyW"/>
+                                    <constraint firstItem="kZ1-9c-Rbf" firstAttribute="height" secondItem="SJa-LQ-uFh" secondAttribute="height" multiplier="1:20" id="GX0-fZ-ZXe"/>
+                                    <constraint firstItem="d9y-UD-Rwd" firstAttribute="height" secondItem="SJa-LQ-uFh" secondAttribute="height" multiplier="1:20" id="I6x-sK-enz"/>
+                                    <constraint firstItem="2NS-HM-2D3" firstAttribute="height" secondItem="SJa-LQ-uFh" secondAttribute="height" multiplier="7:20" id="Pmn-uk-xux"/>
+                                    <constraint firstItem="ine-Pt-z6F" firstAttribute="height" secondItem="SJa-LQ-uFh" secondAttribute="height" multiplier="1:10" id="rxb-Ba-6Fv"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ze2-3V-thW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SJa-LQ-uFh" firstAttribute="top" secondItem="ze2-3V-thW" secondAttribute="top" id="C1x-N9-dVj"/>
+                            <constraint firstItem="ze2-3V-thW" firstAttribute="bottom" secondItem="SJa-LQ-uFh" secondAttribute="bottom" id="HAQ-T7-JYo"/>
+                            <constraint firstItem="SJa-LQ-uFh" firstAttribute="leading" secondItem="ze2-3V-thW" secondAttribute="leading" id="T8M-nG-6js"/>
+                            <constraint firstItem="ze2-3V-thW" firstAttribute="trailing" secondItem="SJa-LQ-uFh" secondAttribute="trailing" id="iB0-fG-n9m"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="マイQR" id="5Td-NR-PjO"/>
+                    <connections>
+                        <outlet property="myQRImageView" destination="2NS-HM-2D3" id="Ph5-oI-5OO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8lr-jI-efg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4025" y="432"/>
+        </scene>
         <!--友達-->
         <scene sceneID="dDB-gS-HyI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bqo-1u-M50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="9i5-xK-eL2" customClass="friendListViewController" customModule="SNSDenwacho" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z3T-Aw-OS9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -605,6 +678,7 @@
                         <outlet property="tableView" destination="sP2-6O-6Na" id="zaS-28-Epk"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bqo-1u-M50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3302.898550724638" y="-263.16964285714283"/>
         </scene>
@@ -659,6 +733,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SfZ-RV-atq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.38844230769999999" green="0.2532380521" blue="0.7255328298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -670,12 +745,16 @@
             <point key="canvasLocation" x="2540.579710144928" y="431.91964285714283"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.38844230769999999" green="0.2532380521" blue="0.7255328298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
+        <image name="facebookLogo" width="1076" height="1076"/>
+        <image name="instagramLogo" width="1000" height="1000"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
+        <image name="twitterLogo" width="400" height="400"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

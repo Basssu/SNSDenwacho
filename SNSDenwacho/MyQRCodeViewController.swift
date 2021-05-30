@@ -13,7 +13,7 @@ class MyQRCodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let urlText = "https://kikuragechan.com"
+        let urlText = UserDefaults.standard.string(forKey:"currentUser")!
         let image = makeQRCode(text: urlText)
         self.myQRImageView.image = image
         // Do any additional setup after loading the view.

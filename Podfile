@@ -7,4 +7,6 @@ target 'SNSDenwacho' do
 
 
   pod 'Firebase/Analytics'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
 end

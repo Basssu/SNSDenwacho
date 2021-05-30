@@ -686,7 +686,7 @@
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="qmm-Dw-Kdk">
                             <color key="tintColor" red="0.38844230769999999" green="0.2532380521" blue="0.7255328298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="rwv-fd-ZbZ" kind="show" id="COo-T4-mr8"/>
+                                <segue destination="rwv-fd-ZbZ" kind="presentation" modalPresentationStyle="fullScreen" id="54K-dq-RAf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -705,10 +705,57 @@
                     <view key="view" contentMode="scaleToFill" id="hNm-Si-h9d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fEQ-1y-eyr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHK-j7-HhY">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8r-4A-4i7">
+                                        <rect key="frame" x="0.0" y="768" width="414" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJO-hz-fYv">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="kSn-gE-T3u"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcs-td-6dP">
+                                                <rect key="frame" x="30" y="0.0" width="144" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <state key="normal" title="戻る"/>
+                                                <connections>
+                                                    <action selector="tapBackButton" destination="rwv-fd-ZbZ" eventType="touchUpInside" id="Bu4-1w-MgM"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqa-mY-ah6">
+                                                <rect key="frame" x="174" y="0.0" width="240" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="90C-JY-i52"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dYX-wb-Q5l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dYX-wb-Q5l" firstAttribute="trailing" secondItem="fEQ-1y-eyr" secondAttribute="trailing" id="2eg-xy-fSI"/>
+                            <constraint firstItem="dYX-wb-Q5l" firstAttribute="bottom" secondItem="fEQ-1y-eyr" secondAttribute="bottom" id="9fS-oq-oP0"/>
+                            <constraint firstItem="fEQ-1y-eyr" firstAttribute="top" secondItem="dYX-wb-Q5l" secondAttribute="top" id="ApG-N2-WwE"/>
+                            <constraint firstItem="fEQ-1y-eyr" firstAttribute="leading" secondItem="dYX-wb-Q5l" secondAttribute="leading" id="TMx-69-5KP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="友だち追加" id="irW-Jd-q0V"/>
+                    <connections>
+                        <outlet property="cameraView" destination="dHK-j7-HhY" id="us5-j8-aHz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8mm-eJ-tL4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

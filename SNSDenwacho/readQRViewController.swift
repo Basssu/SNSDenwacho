@@ -10,14 +10,15 @@ import AVFoundation
 
 class readQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
+    @IBOutlet weak var cameraView: UIView!
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isTranslucent = false
+//        navigationController?.navigationBar.isTranslucent = false
         
-        view.backgroundColor = UIColor.black
+        cameraView.backgroundColor = UIColor.black
         captureSession = AVCaptureSession()
         
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
@@ -46,12 +47,13 @@ class readQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         } else {
             failed()
             return
+            
         }
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.frame = view.layer.bounds
+        previewLayer.frame = CGRect(origin: .zero, size: view.bounds.size)
         previewLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(previewLayer)
+        cameraView.layer.addSublayer(previewLayer)
         
         captureSession.startRunning()
     }
@@ -89,7 +91,9 @@ class readQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             found(code: stringValue)
         }
         
-        navigationController?.popViewController(animated: true)    }
+//        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
+    }
     
     func found(code: String) {
         //        print(code)
@@ -102,6 +106,9 @@ class readQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
+    }
+    @IBAction func tapBackButton() {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

@@ -13,6 +13,7 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     let db = Firestore.firestore()
     var friendList: Array<String> = []
+    var selectedIndexPath = 0
     
     @IBOutlet var tableView: UITableView!
     
@@ -43,7 +44,7 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        selectedIndexPath = indexPath.row
         performSegue(withIdentifier: "toProfilePage", sender: nil)
     }
     
@@ -55,7 +56,7 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
                 let next = segue.destination as? profilePageViewController
                 // 3. １で用意した遷移先の変数に値を渡す
                 next?.isMyProfile = false
-                next?.profileInformation = ["twitter": "","instagram":"", "facebook": "", "imageUrl":""]
+                next?.userName = friendList[selectedIndexPath]
 
             }
         }

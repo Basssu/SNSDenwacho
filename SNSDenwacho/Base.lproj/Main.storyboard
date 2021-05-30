@@ -341,7 +341,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I2h-fg-oQD">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="shota_matsuda" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I2h-fg-oQD">
                                                         <rect key="frame" x="0.0" y="20.5" width="384" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="Lfv-Gd-lqY"/>
@@ -367,7 +367,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uaf-PN-KG1">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="matsudashota" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uaf-PN-KG1">
                                                         <rect key="frame" x="0.0" y="20.5" width="384" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="8nL-8B-nZw"/>
@@ -582,6 +582,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="tapInstagramButton" destination="4Df-xk-DDr" eventType="touchUpInside" id="0Tl-wa-ALQ"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ls-Yu-Ve6">
                                                                 <rect key="frame" x="0.0" y="82" width="82" height="30"/>
@@ -613,6 +616,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="tapTwitterButton" destination="4Df-xk-DDr" eventType="touchUpInside" id="gq7-JF-Xbx"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJt-8G-cmZ">
                                                                 <rect key="frame" x="0.0" y="82" width="82" height="30"/>
@@ -642,6 +648,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="tapFacebookButton" destination="4Df-xk-DDr" eventType="touchUpInside" id="l32-Z9-dON"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YW7-DS-yn5">
                                                                 <rect key="frame" x="0.0" y="82" width="82" height="30"/>
@@ -722,6 +731,8 @@
                     <connections>
                         <outlet property="editButton" destination="LRn-MS-XuQ" id="oca-2e-WoA"/>
                         <outlet property="myQRButtonStackView" destination="FnJ-Q7-F8p" id="db7-Fy-6gS"/>
+                        <outlet property="nameLabel" destination="oE8-PO-C0m" id="mjj-iG-4uK"/>
+                        <outlet property="profileImageView" destination="VAV-hY-tq8" id="fDV-gr-Zpw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77n-HO-h4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -764,7 +775,7 @@
                                         <rect key="frame" x="0.0" y="145" width="414" height="36.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="田中太郎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-9c-Rbf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-9c-Rbf">
                                         <rect key="frame" x="0.0" y="181.5" width="414" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                         <nil key="textColor"/>
@@ -1022,7 +1033,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nv0-Pp-4n7"/>
+        <segue reference="i4y-wW-9OT"/>
         <segue reference="921-B4-nC7"/>
         <segue reference="Fza-uw-9jj"/>
         <segue reference="t0m-CY-4HR"/>

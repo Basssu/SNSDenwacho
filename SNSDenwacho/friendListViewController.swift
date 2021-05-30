@@ -18,6 +18,9 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let docRef = db.collection("users").document(UserDefaults.standard.string(forKey:"currentUser")!)
         docRef.getDocument { (document, error) in
             if let document = document, document.exists{
@@ -27,11 +30,6 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
                 print("Document does not exist")
             }
         }
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

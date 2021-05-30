@@ -7,16 +7,20 @@
 
 import UIKit
 import AVFoundation
+import Firebase
+import FirebaseFirestore
 
 class readQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     @IBOutlet weak var cameraView: UIView!
+    
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationController?.navigationBar.isTranslucent = false
+        //        navigationController?.navigationBar.isTranslucent = false
         
         cameraView.backgroundColor = UIColor.black
         captureSession = AVCaptureSession()
@@ -88,16 +92,47 @@ class readQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
             guard let stringValue = readableObject.stringValue else { return }
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-            found(code: stringValue)
+            found(newFriendUserName: stringValue)
         }
         
-//        navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true, completion: nil)
-    }
+        //        navigationController?.popViewController(animated: true)
+            }
     
-    func found(code: String) {
-        //        print(code)
-        //        self.dismiss(animated: true, completion: nil)
+    func found(newFriendUserName: String) {
+        let docRef = db.collection("users").document(newFriendUserName)
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists{
+                
+                let alert = UIAlertController(title: "友だち追加", message: (document.data()!["name"] as? String)!+"を友だち追加しますか？", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "はい", style: .default, handler: { action in
+                    self.db.collection("users").document(UserDefaults.standard.string(forKey:"currentUser")!).updateData([
+                        "friends": FieldValue.arrayUnion([newFriendUserName]),
+                    ]) { err in
+                        if let err = err {
+                            print("Error writing document: \(err)")
+                        } else {
+                            print("Document successfully written!")
+                        }
+                    }
+
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                alert.addAction(UIAlertAction(title: "いいえ", style: .cancel, handler: { action in
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                
+                self.present(alert, animated: true)
+            } else {
+                let alert = UIAlertController(title: "無効なQRコード", message: "このQRコードは無効です。", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:  { action in
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
+        
     }
     
     override var prefersStatusBarHidden: Bool {

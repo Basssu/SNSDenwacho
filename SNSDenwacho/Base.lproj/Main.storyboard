@@ -552,7 +552,20 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckm-Fa-tzX">
                                         <rect key="frame" x="0.0" y="36.5" width="414" height="108.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="byv-RU-foj">
+                                                <rect key="frame" x="152.5" y="0.0" width="109" height="108.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="byv-RU-foj" secondAttribute="height" multiplier="1:1" id="pSO-uL-GOz"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="byv-RU-foj" secondAttribute="bottom" id="Di8-jw-fYS"/>
+                                            <constraint firstItem="byv-RU-foj" firstAttribute="centerX" secondItem="ckm-Fa-tzX" secondAttribute="centerX" id="Qe2-Re-Cse"/>
+                                            <constraint firstItem="byv-RU-foj" firstAttribute="top" secondItem="ckm-Fa-tzX" secondAttribute="top" id="T4U-UF-trf"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9y-UD-Rwd" userLabel="verticalSpacer">
                                         <rect key="frame" x="0.0" y="145" width="414" height="36.5"/>
@@ -672,6 +685,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="qmm-Dw-Kdk">
                             <color key="tintColor" red="0.38844230769999999" green="0.2532380521" blue="0.7255328298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="rwv-fd-ZbZ" kind="show" id="COo-T4-mr8"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -681,6 +697,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqo-1u-M50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3302.898550724638" y="-263.16964285714283"/>
+        </scene>
+        <!--友だち追加-->
+        <scene sceneID="hgs-Co-f8x">
+            <objects>
+                <viewController id="rwv-fd-ZbZ" customClass="readQRViewController" customModule="SNSDenwacho" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hNm-Si-h9d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dYX-wb-Q5l"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="友だち追加" id="irW-Jd-q0V"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8mm-eJ-tL4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4080" y="-263"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9fX-F7-zz3">

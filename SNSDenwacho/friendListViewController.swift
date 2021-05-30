@@ -6,12 +6,28 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class friendListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let db = Firestore.firestore()
+    var friendList: Array<String> = []
+    
     @IBOutlet var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let docRef = db.collection("users").document(UserDefaults.standard.string(forKey:"currentUser")!)
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists{
+                self.friendList = document.data()!["friends"] as! Array<String>
+                self.tableView.reloadData()
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -19,12 +35,12 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return friendList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! friendListViewCell
-        cell.nameLabel.text = "a"
+        cell.nameLabel.text = friendList[indexPath.row]
         return cell
     }
     

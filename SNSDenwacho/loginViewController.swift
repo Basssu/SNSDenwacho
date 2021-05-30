@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 class loginViewController: UIViewController {
     let db = Firestore.firestore()
-
+    let userDefaults = UserDefaults.standard
     
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -25,11 +25,9 @@ class loginViewController: UIViewController {
     @IBAction func tapLogInButton() {
         let docRef = db.collection("users").document(userName.text!)
         docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(document.data())")
-                if(self.password.text == document.data()!["password"] as? String){
-                    
+            if let document = document, document.exists {                if(self.password.text == document.data()!["password"] as? String){
+                self.userDefaults.set(document.documentID, forKey: "currentUser")
+                self.performSegue(withIdentifier: "toFriendListFromLoginPage", sender: nil)
                 }else{
                     print("password is not correct")
                 }

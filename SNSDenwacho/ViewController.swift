@@ -8,10 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let userDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.userDefaults.set(nil, forKey: "currentUser")
+
     }
 }
 

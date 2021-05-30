@@ -265,7 +265,7 @@
         <!--マイページ-->
         <scene sceneID="Xr2-kU-gpI">
             <objects>
-                <viewController id="4Df-xk-DDr" sceneMemberID="viewController">
+                <viewController id="4Df-xk-DDr" customClass="profilePageViewController" customModule="SNSDenwacho" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fxc-gt-vcW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -530,6 +530,10 @@
                             <color key="tintColor" red="0.38844230769999999" green="0.2532380521" blue="0.7255328298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="editButton" destination="LRn-MS-XuQ" id="oca-2e-WoA"/>
+                        <outlet property="myQRButtonStackView" destination="FnJ-Q7-F8p" id="db7-Fy-6gS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77n-HO-h4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -692,6 +696,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="sP2-6O-6Na" id="zaS-28-Epk"/>
+                        <segue destination="4Df-xk-DDr" kind="show" identifier="toProfilePage" id="t0m-CY-4HR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqo-1u-M50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -824,6 +829,9 @@
             <point key="canvasLocation" x="2540.579710144928" y="431.91964285714283"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="s4a-3G-DVW"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.38844230769999999" green="0.2532380521" blue="0.7255328298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <image name="facebookLogo" width="1076" height="1076"/>

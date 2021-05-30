@@ -15,7 +15,7 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,14 +28,31 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        performSegue(withIdentifier: "toProfilePage", sender: nil)
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
+            // segueのIDを確認して特定のsegueのときのみ動作させる
+            if segue.identifier == "toProfilePage" {
+                // 2. 遷移先のViewControllerを取得
+                let next = segue.destination as? profilePageViewController
+                // 3. １で用意した遷移先の変数に値を渡す
+                next?.isMyProfile = false
+                next?.profileInformation = ["twitter": "","instagram":"", "facebook": "", "imageUrl":""]
+
+            }
+        }
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

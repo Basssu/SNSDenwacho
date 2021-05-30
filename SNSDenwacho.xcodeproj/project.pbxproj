@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C534389226633A9A000BEB66 /* MyQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534389126633A9A000BEB66 /* MyQRCodeViewController.swift */; };
 		C534389526633D0F000BEB66 /* readQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534389426633D0F000BEB66 /* readQRViewController.swift */; };
+		C534389926634F8B000BEB66 /* profilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534389826634F8B000BEB66 /* profilePageViewController.swift */; };
 		C5B5F7872657FA5700380EC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B5F7862657FA5700380EC3 /* AppDelegate.swift */; };
 		C5B5F7892657FA5700380EC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B5F7882657FA5700380EC3 /* SceneDelegate.swift */; };
 		C5B5F78B2657FA5700380EC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B5F78A2657FA5700380EC3 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		C534389126633A9A000BEB66 /* MyQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRCodeViewController.swift; sourceTree = "<group>"; };
 		C534389426633D0F000BEB66 /* readQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readQRViewController.swift; sourceTree = "<group>"; };
+		C534389826634F8B000BEB66 /* profilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profilePageViewController.swift; sourceTree = "<group>"; };
 		C5B5F7832657FA5700380EC3 /* SNSDenwacho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNSDenwacho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B5F7862657FA5700380EC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5B5F7882657FA5700380EC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				C5B5F7882657FA5700380EC3 /* SceneDelegate.swift */,
 				C5B5F78A2657FA5700380EC3 /* ViewController.swift */,
 				C5B5F78C2657FA5700380EC3 /* Main.storyboard */,
+				C534389826634F8B000BEB66 /* profilePageViewController.swift */,
 				C5DC3753265A3943002051B8 /* friendListViewController.swift */,
 				C5DC3756265A3F6F002051B8 /* friendListViewCell.swift */,
 				C534389426633D0F000BEB66 /* readQRViewController.swift */,
@@ -156,6 +159,7 @@
 				C5B5F7872657FA5700380EC3 /* AppDelegate.swift in Sources */,
 				C5DC3757265A3F6F002051B8 /* friendListViewCell.swift in Sources */,
 				C5B5F7892657FA5700380EC3 /* SceneDelegate.swift in Sources */,
+				C534389926634F8B000BEB66 /* profilePageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

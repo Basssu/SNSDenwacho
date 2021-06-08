@@ -32,7 +32,10 @@ class profilePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if(!isMyProfile){
             logoutButton.isHidden = true
             myQRButtonStackView.isHidden = true
@@ -68,7 +71,6 @@ class profilePageViewController: UIViewController {
                 print("Document does not exist")
             }
         }
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func tapTwitterButton() {
@@ -105,6 +107,7 @@ class profilePageViewController: UIViewController {
     }
     
     @IBAction func pushEditButton() {
+        performSegue(withIdentifier: "toEditPage", sender: nil)
     }
     
     @IBAction func tapDeleteFriendButton() {
@@ -141,5 +144,19 @@ class profilePageViewController: UIViewController {
             //            self.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // segueのIDを確認して特定のsegueのときのみ動作させる
+        if segue.identifier == "toEditPage" {
+            // 2. 遷移先のViewControllerを取得
+            let next = segue.destination as? editProfileInformationViewController
+            // 3. １で用意した遷移先の変数に値を渡す
+            next?.twitter = self.twitterUserName
+            next?.instagram = self.instagramUserName
+            next?.facebook = self.facebookUrl
+            next?.name = self.nameLabel.text!
+        }
     }
 }

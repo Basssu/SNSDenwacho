@@ -872,11 +872,207 @@
                         <outlet property="navigationbar" destination="8Oh-Oy-cZB" id="veE-Ru-9IX"/>
                         <outlet property="profileImageView" destination="VAV-hY-tq8" id="fDV-gr-Zpw"/>
                         <outlet property="twitterButton" destination="jhi-xu-kdZ" id="6Ry-yv-hhC"/>
+                        <segue destination="VWv-aY-cez" kind="show" identifier="toEditPage" id="KPo-tv-JLR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77n-HO-h4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3302.898550724638" y="431.91964285714283"/>
+        </scene>
+        <!--情報の編集-->
+        <scene sceneID="STm-NI-Y61">
+            <objects>
+                <viewController id="VWv-aY-cez" customClass="editProfileInformationViewController" customModule="SNSDenwacho" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KJO-Ol-U0X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmw-0G-0e5">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLw-0F-cin">
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="725"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="mgn-nc-XeC"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ITj-ng-Elx">
+                                        <rect key="frame" x="15" y="0.0" width="384" height="725"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HjV-kw-1AG">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="cyU-d6-5vc"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5fY-2d-VWt">
+                                                <rect key="frame" x="0.0" y="50" width="384" height="66"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQS-On-fXm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="vRV-Nr-cfz"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1x-di-92t">
+                                                        <rect key="frame" x="0.0" y="21" width="384" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="8fn-iC-Ic5"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dI-9q-0xc">
+                                                        <rect key="frame" x="0.0" y="56" width="384" height="10"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="10" id="tDa-hQ-vcy"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ix5-U2-VXe">
+                                                <rect key="frame" x="0.0" y="116" width="384" height="66"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="twitterのユーザーネーム(任意)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFA-c7-Yjm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="0DC-gi-VBE"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yx8-ME-cP2">
+                                                        <rect key="frame" x="0.0" y="21" width="384" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="McX-o4-MNZ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kp7-fe-JJD">
+                                                        <rect key="frame" x="0.0" y="56" width="384" height="10"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="10" id="ZFb-Y3-7qF"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iJH-ib-QvX">
+                                                <rect key="frame" x="0.0" y="182" width="384" height="66"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="instagramのユーザーネーム(任意)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bV9-Pc-ksR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="Brq-lG-LlW"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ucl-r2-dmW">
+                                                        <rect key="frame" x="0.0" y="21" width="384" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="0YO-Po-xjV"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEm-ZQ-c6Y">
+                                                        <rect key="frame" x="0.0" y="56" width="384" height="10"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="10" id="iG1-bW-YAa"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FqQ-Xw-2an">
+                                                <rect key="frame" x="0.0" y="248" width="384" height="66"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="facebookのリンク(任意)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I98-gJ-9YN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="ubf-WE-8FD"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sig-EO-wqr">
+                                                        <rect key="frame" x="0.0" y="21" width="384" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="QMo-Vk-d5E"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGa-dD-8JV">
+                                                        <rect key="frame" x="0.0" y="56" width="384" height="10"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="10" id="VWa-Nl-s7L"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wds-cx-PEQ">
+                                                <rect key="frame" x="0.0" y="314" width="384" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="c99-cw-NNe"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyA-UP-sLt">
+                                                <rect key="frame" x="0.0" y="364" width="384" height="30"/>
+                                                <state key="normal" title="保存"/>
+                                                <connections>
+                                                    <action selector="tapSaveButton:" destination="VWv-aY-cez" eventType="touchUpInside" id="Hyd-ni-tVp"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04Y-8h-RF5">
+                                                <rect key="frame" x="0.0" y="394" width="384" height="331"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2R-2e-beg">
+                                        <rect key="frame" x="399" y="0.0" width="15" height="725"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="isq-Uw-zcW"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WjJ-Kr-YBo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WjJ-Kr-YBo" firstAttribute="bottom" secondItem="fmw-0G-0e5" secondAttribute="bottom" id="1Ga-tX-ins"/>
+                            <constraint firstItem="WjJ-Kr-YBo" firstAttribute="trailing" secondItem="fmw-0G-0e5" secondAttribute="trailing" id="7Kc-ng-xDf"/>
+                            <constraint firstItem="fmw-0G-0e5" firstAttribute="top" secondItem="WjJ-Kr-YBo" secondAttribute="top" id="T7R-II-ubi"/>
+                            <constraint firstItem="fmw-0G-0e5" firstAttribute="leading" secondItem="WjJ-Kr-YBo" secondAttribute="leading" id="cUv-83-11K"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="情報の編集" id="5fU-hG-HVG"/>
+                    <connections>
+                        <outlet property="facebookLink" destination="Sig-EO-wqr" id="is9-P3-6Lk"/>
+                        <outlet property="instagramUserName" destination="Ucl-r2-dmW" id="rac-S3-zN7"/>
+                        <outlet property="nameTextField" destination="x1x-di-92t" id="fHa-Jt-SIr"/>
+                        <outlet property="twitterUserName" destination="yx8-ME-cP2" id="eCI-lC-Lu5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6qo-Xh-R6g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3303" y="1135"/>
         </scene>
         <!--マイQR-->
         <scene sceneID="C9n-HC-Hqv">
@@ -1176,7 +1372,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="OW5-Kw-7sR"/>
         <segue reference="921-B4-nC7"/>
-        <segue reference="Fza-uw-9jj"/>
+        <segue reference="ZUm-HQ-crg"/>
         <segue reference="s4a-3G-DVW"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.38844230769999999" green="0.2532380521" blue="0.7255328298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

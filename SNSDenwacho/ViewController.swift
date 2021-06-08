@@ -52,7 +52,7 @@ class ViewController: UIViewController, UITextFieldDelegate ,
         guard self.userNameLabel.text!.count >= 7 else {
             return
         }
-        let ref = Storage.storage().reference().child("\(userNameLabel.text!)/profileImage.jpg")
+        let ref = Storage.storage().reference().child("/users/\(userNameLabel.text!)/profileImage.jpg")
         
         if (self.d != nil){
             let md = StorageMetadata()
@@ -69,14 +69,15 @@ class ViewController: UIViewController, UITextFieldDelegate ,
             }
             
         }else{
-            self.sendUserDataToFieebase(url: nil)
+
+            self.sendUserDataToFieebase(url: "")
         }
     }
     
-    func sendUserDataToFieebase(url:String?){
+    func sendUserDataToFieebase(url:String){
         self.db.collection("users").document(self.userNameLabel.text!).setData([
             "friends":[],
-            "image_url":url!,
+            "image_url":url,
             "name": self.nameLabel.text!,
             "password": self.passWordLabel.text!,
             "sns_facebook": self.facebookLabel.text!,

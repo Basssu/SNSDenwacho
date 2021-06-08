@@ -13,7 +13,6 @@ class profilePageViewController: UIViewController {
     
     var userName = ""
     let db = Firestore.firestore()
-    var imageUrl = ""
     var twitterUserName = ""
     var instagramUserName = ""
     var facebookUrl = ""
@@ -36,11 +35,12 @@ class profilePageViewController: UIViewController {
         }else{
             userName = UserDefaults.standard.string(forKey:"currentUser")!
         }
+        
         let docRef = db.collection("users").document(userName)
         docRef.getDocument { (document, error) in
             if let document = document, document.exists{
+                self.profileImageView.image = self.getImageByUrl(url: document.data()!["image_url"] as! String)
                 self.nameLabel.text = document.data()!["name"] as? String
-                self.imageUrl = document.data()!["image_url"] as! String
                 self.twitterUserName = document.data()!["sns_twitter"] as! String
                 self.instagramUserName = document.data()!["sns_instagram"] as! String
                 self.facebookUrl = document.data()!["sns_facebook"] as! String
@@ -63,6 +63,17 @@ class profilePageViewController: UIViewController {
     
     @IBAction func tapFacebookButton() {
         openApp(urlString: facebookUrl)
+    }
+    
+    func getImageByUrl(url: String) -> UIImage{
+        let url = URL(string: url)
+        do {
+            let data = try Data(contentsOf: url!)
+            return UIImage(data: data)!
+        } catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
+        return UIImage()
     }
     
     func openApp(urlString: String) {

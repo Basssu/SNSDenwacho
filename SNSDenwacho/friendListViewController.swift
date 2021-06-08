@@ -49,17 +49,17 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-            // segueのIDを確認して特定のsegueのときのみ動作させる
-            if segue.identifier == "toProfilePage" {
-                // 2. 遷移先のViewControllerを取得
-                let next = segue.destination as? profilePageViewController
-                // 3. １で用意した遷移先の変数に値を渡す
-                next?.isMyProfile = false
-                next?.userName = friendList[selectedIndexPath]
-
-            }
+        
+        // segueのIDを確認して特定のsegueのときのみ動作させる
+        if segue.identifier == "toProfilePage" {
+            // 2. 遷移先のViewControllerを取得
+            let next = segue.destination as? profilePageViewController
+            // 3. １で用意した遷移先の変数に値を渡す
+            next?.isMyProfile = false
+            next?.userName = friendList[selectedIndexPath]
+            
         }
+    }
     /*
      // MARK: - Navigation
      

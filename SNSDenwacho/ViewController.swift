@@ -25,6 +25,8 @@ class ViewController: UIViewController, UITextFieldDelegate ,
     var isLoading = false
     let userDefaults = UserDefaults.standard
     let db = Firestore.firestore()
+//    let im: UIImage? = nil
+    var d: Data? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,45 +49,59 @@ class ViewController: UIViewController, UITextFieldDelegate ,
     }
     
     @IBAction func createAccountbutton() {
+        guard self.userNameLabel.text!.count >= 7 else {
+            return
+        }
+        let ref = Storage.storage().reference().child("\(userNameLabel.text!)/profileImage.jpg")
         
-        self.db.collection("users").document(userNameLabel.text!).setData([
+        if (self.d != nil){
+            let md = StorageMetadata()
+            md.contentType = "image/png"
+            ref.putData(self.d!, metadata: md) { (metadata, error) in
+                if error == nil {
+                    ref.downloadURL(completion: { (url, error) in
+                        print("Done, url is \(String(describing: url))")
+                        self.sendUserDataToFieebase(url: String(describing: url))
+                    })
+                }else{
+                    return
+                }
+            }
+            
+        }else{
+            self.sendUserDataToFieebase(url: nil)
+        }
+    }
+    
+    func sendUserDataToFieebase(url:String?){
+        self.db.collection("users").document(self.userNameLabel.text!).setData([
             "friends":[],
-            "image_url":"",
-            "name": nameLabel.text!,
-            "password": passWordLabel.text!,
-            "sns_facebook": facebookLabel.text!,
-            "sns_instagram": instagramLabel.text!,
-            "sns_twitter":twitterLabel.text!,
+            "image_url":url!,
+            "name": self.nameLabel.text!,
+            "password": self.passWordLabel.text!,
+            "sns_facebook": self.facebookLabel.text!,
+            "sns_instagram": self.instagramLabel.text!,
+            "sns_twitter":self.twitterLabel.text!,
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {
                 print("Document successfully written!")
+                
+                self.userDefaults.set(self.userNameLabel.text!, forKey: "currentUser")
+                self.performSegue(withIdentifier: "toFriendListFromCreatePage", sender: nil)
             }
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
     didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
-     guard let im: UIImage = info[.editedImage] as? UIImage else { return }
-     guard let d: Data = im.jpegData(compressionQuality: 0.5) else { return }
-        
+    guard let im: UIImage = info[.editedImage] as? UIImage else { return }
+    self.d = im.jpegData(compressionQuality: 0.5)
      self.profileImageView.image = im
-     let md = StorageMetadata()
-     md.contentType = "image/png"
+     
 
-     let ref = Storage.storage().reference().child("someFolder/12345678.jpg")
-
-     ref.putData(d, metadata: md) { (metadata, error) in
-         if error == nil {
-             ref.downloadURL(completion: { (url, error) in
-                 print("Done, url is \(String(describing: url))")
-             })
-         }else{
-             print("error \(String(describing: error))")
-         }
-     }
+     
 
      dismiss(animated: true)
     }

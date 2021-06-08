@@ -98,7 +98,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PRw-gS-TdF">
                                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="66"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ユーザーネーム(半角英数)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQd-2f-vxG">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ユーザーネーム(半角英数/7文字以上)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQd-2f-vxG">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="g1q-PA-CHy"/>
@@ -171,7 +171,7 @@
                                                                             <constraint firstAttribute="height" constant="35" id="UDk-Z1-EDu"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qj6-bQ-XX2">
                                                                         <rect key="frame" x="0.0" y="56" width="384" height="10"/>
@@ -200,7 +200,7 @@
                                                                             <constraint firstAttribute="height" constant="35" id="Zil-so-3tB"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wND-Zh-Mjm">
                                                                         <rect key="frame" x="0.0" y="56" width="384" height="10"/>
@@ -392,6 +392,7 @@
                         <outlet property="profileImageView" destination="MVD-9B-iyg" id="eDs-Hq-PXp"/>
                         <outlet property="twitterLabel" destination="YVx-TK-icC" id="Gl9-AZ-axK"/>
                         <outlet property="userNameLabel" destination="R7e-mR-cUu" id="73R-mP-O41"/>
+                        <segue destination="5SZ-xq-zUU" kind="presentation" identifier="toFriendListFromCreatePage" modalPresentationStyle="fullScreen" id="OW5-Kw-7sR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJ9-QW-cO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1140,6 +1141,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="OW5-Kw-7sR"/>
         <segue reference="921-B4-nC7"/>
         <segue reference="ZUm-HQ-crg"/>
         <segue reference="t0m-CY-4HR"/>

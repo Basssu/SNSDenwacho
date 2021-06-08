@@ -22,6 +22,7 @@ class profilePageViewController: UIViewController {
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var navigationbar: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +32,10 @@ class profilePageViewController: UIViewController {
             editButton.isHidden = true
             self.navigationItem.rightBarButtonItem = nil;
             self.navigationItem.leftBarButtonItem = nil;
-            self.title = "友達のプロフィール"
         }else{
             userName = UserDefaults.standard.string(forKey:"currentUser")!
         }
-        
+        navigationbar.title = userName
         let docRef = db.collection("users").document(userName)
         docRef.getDocument { (document, error) in
             if let document = document, document.exists{

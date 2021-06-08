@@ -840,6 +840,7 @@
                         <outlet property="editButton" destination="LRn-MS-XuQ" id="oca-2e-WoA"/>
                         <outlet property="myQRButtonStackView" destination="FnJ-Q7-F8p" id="db7-Fy-6gS"/>
                         <outlet property="nameLabel" destination="oE8-PO-C0m" id="mjj-iG-4uK"/>
+                        <outlet property="navigationbar" destination="8Oh-Oy-cZB" id="veE-Ru-9IX"/>
                         <outlet property="profileImageView" destination="VAV-hY-tq8" id="fDV-gr-Zpw"/>
                     </connections>
                 </viewController>
@@ -1144,9 +1145,9 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="OW5-Kw-7sR"/>
-        <segue reference="54K-dq-RAf"/>
-        <segue reference="OL0-Hz-LNg"/>
-        <segue reference="t0m-CY-4HR"/>
+        <segue reference="921-B4-nC7"/>
+        <segue reference="Fza-uw-9jj"/>
+        <segue reference="s4a-3G-DVW"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.38844230769999999" green="0.2532380521" blue="0.7255328298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>

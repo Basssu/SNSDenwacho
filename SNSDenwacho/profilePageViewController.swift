@@ -86,4 +86,19 @@ class profilePageViewController: UIViewController {
         }
     }
     
+    @IBAction func pushEditButton() {
+        let alert = UIAlertController(title: "ログアウト", message: "ログアウトします。よろしいですか？", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "はい", style: .default, handler: { action in
+            UserDefaults.standard.setValue(nil, forKey: "currentUser")
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "いいえ", style: .cancel, handler: { action in
+//            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true)
+
+        
+    }
+    
 }

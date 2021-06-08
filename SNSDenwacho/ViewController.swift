@@ -37,7 +37,12 @@ class ViewController: UIViewController, UITextFieldDelegate ,
         twitterLabel.delegate = self
         facebookLabel.delegate = self
         instagramLabel.delegate = self
-        self.userDefaults.set(nil, forKey: "currentUser")
+    }
+    
+    override func viewDidAppear(_ animated:Bool) {
+        if(userDefaults.string(forKey: "currentUser") != nil){
+            self.performSegue(withIdentifier: "toFriendListFromCreatePage", sender: nil)
+        }
     }
     
     @IBAction func setProfileImageButton() {

@@ -100,7 +100,13 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func getImageByUrl(url: String) -> UIImage{
-        let url = URL(string: url)
+        var finalUrl = ""
+        if(url == ""){
+            finalUrl = "https://firebasestorage.googleapis.com/v0/b/snsdenwacho.appspot.com/o/unknown.jpg?alt=media&token=39e02483-6c3d-4bb5-afb6-e64a148699f6"
+        }else{
+            finalUrl = url
+        }
+        let url = URL(string: finalUrl)
         do {
             let data = try Data(contentsOf: url!)
             return UIImage(data: data)!

@@ -1,5 +1,5 @@
 //
-//  friendListViewController.swift
+//  friendIDListViewController.swift
 //  SNSDenwacho
 //
 //  Created by Yuma Ishibashi on 2021/05/23.
@@ -12,7 +12,8 @@ import FirebaseFirestore
 class friendListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let db = Firestore.firestore()
-    var friendList: Array<String> = []
+    var friendIDList: Array<String> = []
+    var friendInformationList: [Dictionary<String, String>] = []
     var selectedIndexPath = 0
     
     @IBOutlet var tableView: UITableView!
@@ -22,24 +23,53 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        friendIDList = []
+        friendInformationList = []
+//        let semaphore = DispatchSemaphore(value: 0)
         let docRef = db.collection("users").document(UserDefaults.standard.string(forKey:"currentUser")!)
         docRef.getDocument { (document, error) in
             if let document = document, document.exists{
-                self.friendList = document.data()!["friends"] as! Array<String>
-                self.tableView.reloadData()
+                self.friendIDList = document.data()!["friends"] as! Array<String>
+                for id in self.friendIDList{
+        //            let semaphore2 = DispatchSemaphore(value: 0)
+                    let docRef = self.db.collection("users").document(id)
+                    docRef.getDocument { (document, error) in
+                        if let document = document, document.exists{
+                            self.friendInformationList.append(["name": document.data()!["name"] as! String,"imageUrl": document.data()!["image_url"] as! String])
+        //
+                            if(self.friendIDList[self.friendIDList.count-1]==id){
+                                self.tableView.reloadData()
+                            }
+                        } else {
+                            print("Document does not exist")
+        //                    semaphore2.signal()
+                            if(self.friendIDList[self.friendIDList.count-1]==id){
+                                self.tableView.reloadData()
+                            }
+                        }
+        //                semaphore2.wait()
+                    }
+                }
+//                semaphore.signal()
             } else {
                 print("Document does not exist")
+//                semaphore.signal()
+                
             }
         }
+//        semaphore.wait()
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendList.count
+        return friendInformationList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! friendListViewCell
-        cell.nameLabel.text = friendList[indexPath.row]
+        cell.profileImage.image = getImageByUrl(url: friendInformationList[indexPath.row]["imageUrl"]!)
+        cell.nameLabel.text = friendInformationList[indexPath.row]["name"]!
         return cell
     }
     
@@ -56,9 +86,20 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
             let next = segue.destination as? profilePageViewController
             // 3. １で用意した遷移先の変数に値を渡す
             next?.isMyProfile = false
-            next?.userName = friendList[selectedIndexPath]
+            next?.userName = friendIDList[selectedIndexPath]
             
         }
+    }
+    
+    func getImageByUrl(url: String) -> UIImage{
+        let url = URL(string: url)
+        do {
+            let data = try Data(contentsOf: url!)
+            return UIImage(data: data)!
+        } catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
+        return UIImage()
     }
     /*
      // MARK: - Navigation

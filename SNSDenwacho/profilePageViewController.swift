@@ -17,7 +17,7 @@ class profilePageViewController: UIViewController {
     var instagramUserName = ""
     var facebookUrl = ""
     var isMyProfile = true
-
+    
     @IBOutlet weak var myQRButtonStackView: UIStackView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -44,8 +44,8 @@ class profilePageViewController: UIViewController {
                 self.twitterUserName = document.data()!["sns_twitter"] as! String
                 self.instagramUserName = document.data()!["sns_instagram"] as! String
                 self.facebookUrl = document.data()!["sns_facebook"] as! String
-//                self.loadView()
-//                self.viewDidLoad()
+                //                self.loadView()
+                //                self.viewDidLoad()
             } else {
                 print("Document does not exist")
             }
@@ -81,7 +81,7 @@ class profilePageViewController: UIViewController {
         if UIApplication.shared.canOpenURL(url! as URL) {
             UIApplication.shared.open(url! as URL)
         } else {
-          //redirect to safari because the user doesn't have Instagram
+            //redirect to safari because the user doesn't have Instagram
             UIApplication.shared.open(NSURL(string: "http://instagram.com/")! as URL)
         }
     }

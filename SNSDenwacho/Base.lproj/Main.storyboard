@@ -591,14 +591,14 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hy0-3D-QMy">
                                                 <rect key="frame" x="0.0" y="131" width="414" height="50"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="田中太郎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE8-PO-C0m">
-                                                        <rect key="frame" x="160.5" y="11.5" width="93.5" height="27.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE8-PO-C0m">
+                                                        <rect key="frame" x="207" y="25" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRn-MS-XuQ">
-                                                        <rect key="frame" x="277" y="11" width="21.5" height="28"/>
+                                                        <rect key="frame" x="230" y="11" width="21.5" height="28"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <color key="tintColor" red="0.38844230769999999" green="0.2532380521" blue="0.7255328298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" image="pencil" catalog="system">
@@ -865,7 +865,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckm-Fa-tzX">
                                         <rect key="frame" x="0.0" y="36.5" width="414" height="108.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="byv-RU-foj">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="byv-RU-foj">
                                                 <rect key="frame" x="152.5" y="0.0" width="109" height="108.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="byv-RU-foj" secondAttribute="height" multiplier="1:1" id="pSO-uL-GOz"/>
@@ -883,7 +883,7 @@
                                         <rect key="frame" x="0.0" y="145" width="414" height="36.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-9c-Rbf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-9c-Rbf">
                                         <rect key="frame" x="0.0" y="181.5" width="414" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                         <nil key="textColor"/>
@@ -923,6 +923,8 @@
                     <navigationItem key="navigationItem" title="マイQR" id="5Td-NR-PjO"/>
                     <connections>
                         <outlet property="myQRImageView" destination="2NS-HM-2D3" id="Ph5-oI-5OO"/>
+                        <outlet property="nameLabel" destination="kZ1-9c-Rbf" id="UpR-4d-Rwn"/>
+                        <outlet property="profileImageView" destination="byv-RU-foj" id="oY3-dy-9Cg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lr-jI-efg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1143,7 +1145,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="OW5-Kw-7sR"/>
         <segue reference="921-B4-nC7"/>
-        <segue reference="ZUm-HQ-crg"/>
+        <segue reference="Fza-uw-9jj"/>
         <segue reference="t0m-CY-4HR"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.38844230769999999" green="0.2532380521" blue="0.7255328298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

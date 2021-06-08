@@ -6,17 +6,43 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class MyQRCodeViewController: UIViewController {
     
+    let db = Firestore.firestore()
+    
     @IBOutlet var myQRImageView: UIImageView!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let urlText = UserDefaults.standard.string(forKey:"currentUser")!
-        let image = makeQRCode(text: urlText)
+        let userID = UserDefaults.standard.string(forKey:"currentUser")!
+        let image = makeQRCode(text: userID)
         self.myQRImageView.image = image
+        
+        let docRef = db.collection("users").document(userID)
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists{
+                self.profileImageView.image = self.getImageByUrl(url: document.data()!["image_url"] as! String)
+                self.nameLabel.text = document.data()!["name"] as? String
+            } else {
+                print("Document does not exist")
+            }
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    func getImageByUrl(url: String) -> UIImage{
+        let url = URL(string: url)
+        do {
+            let data = try Data(contentsOf: url!)
+            return UIImage(data: data)!
+        } catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
+        return UIImage()
     }
     
     func makeQRCode(text: String) -> UIImage? {
@@ -27,16 +53,4 @@ class MyQRCodeViewController: UIViewController {
         guard let cgImage = CIContext().createCGImage(ciImage, from: ciImage.extent) else { return nil }
         return UIImage(cgImage: cgImage)
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

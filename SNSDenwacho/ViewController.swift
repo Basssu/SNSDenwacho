@@ -54,7 +54,7 @@ class ViewController: UIViewController, UITextFieldDelegate ,
     }
     
     @IBAction func createAccountbutton() {
-        guard self.userNameLabel.text!.count >= 7 else {
+        guard self.userNameLabel.text!.count >= 7 && self.passWordLabel.text!.count >= 7 && self.passWordLabel.text! == self.passWordLabel2.text! else {
             return
         }
         let ref = Storage.storage().reference().child("/users/\(userNameLabel.text!)/profileImage.jpg")
@@ -74,7 +74,6 @@ class ViewController: UIViewController, UITextFieldDelegate ,
             }
             
         }else{
-
             self.sendUserDataToFieebase(url: "")
         }
     }

@@ -25,6 +25,10 @@ class profilePageViewController: UIViewController {
     @IBOutlet weak var navigationbar: UINavigationItem!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var deleteFriendButton: UIButton!
+    @IBOutlet weak var twitterButton: UIButton!
+    @IBOutlet weak var instagramButton: UIButton!
+    @IBOutlet weak var facebookButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +52,18 @@ class profilePageViewController: UIViewController {
                 self.twitterUserName = document.data()!["sns_twitter"] as! String
                 self.instagramUserName = document.data()!["sns_instagram"] as! String
                 self.facebookUrl = document.data()!["sns_facebook"] as! String
-                //                self.loadView()
-                //                self.viewDidLoad()
+                if(self.twitterUserName == ""){
+                    self.twitterButton.alpha = 0.3
+                    self.twitterButton.isEnabled = false
+                }
+                if(self.instagramUserName == ""){
+                    self.instagramButton.alpha = 0.3
+                    self.instagramButton.isEnabled = false
+                }
+                if(self.facebookUrl == ""){
+                    self.facebookButton.alpha = 0.3
+                    self.facebookButton.isEnabled = false
+                }
             } else {
                 print("Document does not exist")
             }

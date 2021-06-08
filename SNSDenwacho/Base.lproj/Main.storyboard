@@ -864,11 +864,14 @@
                     <connections>
                         <outlet property="deleteFriendButton" destination="oEW-Wc-f3C" id="jVL-Bm-13C"/>
                         <outlet property="editButton" destination="LRn-MS-XuQ" id="oca-2e-WoA"/>
+                        <outlet property="facebookButton" destination="Dhx-sD-uuS" id="AdK-JL-CCW"/>
+                        <outlet property="instagramButton" destination="Zfb-JY-taY" id="zyE-b0-as9"/>
                         <outlet property="logoutButton" destination="3bq-WT-gz0" id="1Xa-Y0-tKe"/>
                         <outlet property="myQRButtonStackView" destination="FnJ-Q7-F8p" id="db7-Fy-6gS"/>
                         <outlet property="nameLabel" destination="oE8-PO-C0m" id="mjj-iG-4uK"/>
                         <outlet property="navigationbar" destination="8Oh-Oy-cZB" id="veE-Ru-9IX"/>
                         <outlet property="profileImageView" destination="VAV-hY-tq8" id="fDV-gr-Zpw"/>
+                        <outlet property="twitterButton" destination="jhi-xu-kdZ" id="6Ry-yv-hhC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77n-HO-h4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

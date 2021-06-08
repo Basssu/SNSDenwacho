@@ -23,16 +23,20 @@ class profilePageViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var navigationbar: UINavigationItem!
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var deleteFriendButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if(!isMyProfile){
+            logoutButton.isHidden = true
             myQRButtonStackView.isHidden = true
             editButton.isHidden = true
             self.navigationItem.rightBarButtonItem = nil;
             self.navigationItem.leftBarButtonItem = nil;
         }else{
+            deleteFriendButton.isHidden = true
             userName = UserDefaults.standard.string(forKey:"currentUser")!
         }
         navigationbar.title = userName
@@ -87,6 +91,32 @@ class profilePageViewController: UIViewController {
     }
     
     @IBAction func pushEditButton() {
+    }
+    
+    @IBAction func tapDeleteFriendButton() {
+        let alert = UIAlertController(title: "友達削除", message: "この友達を友達リストから削除しますか？", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "はい", style: .default, handler: { action in
+            self.db.collection("users").document(UserDefaults.standard.string(forKey:"currentUser")!).updateData([
+                "friends": FieldValue.arrayRemove([self.userName]),
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                    self.navigationController?.popViewController(animated: true)
+                    
+                    
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "いいえ", style: .cancel, handler: { action in
+            //            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true)
+    }
+    
+    @IBAction func tapLogoutButton() {
         let alert = UIAlertController(title: "ログアウト", message: "ログアウトします。よろしいですか？", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "はい", style: .default, handler: { action in
@@ -94,11 +124,8 @@ class profilePageViewController: UIViewController {
             self.navigationController?.dismiss(animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "いいえ", style: .cancel, handler: { action in
-//            self.dismiss(animated: true, completion: nil)
+            //            self.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true)
-
-        
     }
-    
 }

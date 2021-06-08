@@ -25,30 +25,31 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewWillAppear(animated)
         friendIDList = []
         friendInformationList = []
-//        let semaphore = DispatchSemaphore(value: 0)
+        self.tableView.reloadData()
         let docRef = db.collection("users").document(UserDefaults.standard.string(forKey:"currentUser")!)
         docRef.getDocument { (document, error) in
             if let document = document, document.exists{
                 self.friendIDList = document.data()!["friends"] as! Array<String>
+                var counter = 0
                 for id in self.friendIDList{
-        //            let semaphore2 = DispatchSemaphore(value: 0)
                     let docRef = self.db.collection("users").document(id)
                     docRef.getDocument { (document, error) in
                         if let document = document, document.exists{
-                            self.friendInformationList.append(["name": document.data()!["name"] as! String,"imageUrl": document.data()!["image_url"] as! String])
-        //
-                            if(self.friendIDList[self.friendIDList.count-1]==id){
+                            self.friendInformationList.append(["name": document.data()!["name"] as! String,"imageUrl": document.data()!["image_url"] as! String, "id": document.documentID])
+                            counter+=1
+                            if(self.friendIDList.count==counter){
                                 self.tableView.reloadData()
+                                
                             }
                         } else {
-                            print("Document does not exist")
-        //                    semaphore2.signal()
-                            if(self.friendIDList[self.friendIDList.count-1]==id){
+                            counter+=1
+                            self.tableView.reloadData()
+                            if(self.friendIDList.count==counter){
                                 self.tableView.reloadData()
                             }
                         }
-        //                semaphore2.wait()
                     }
+//                    semaphore.wait()
                 }
 //                semaphore.signal()
             } else {
@@ -57,7 +58,6 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
                 
             }
         }
-//        semaphore.wait()
         
         
     }
@@ -68,8 +68,16 @@ class friendListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! friendListViewCell
-        cell.profileImage.image = getImageByUrl(url: friendInformationList[indexPath.row]["imageUrl"]!)
-        cell.nameLabel.text = friendInformationList[indexPath.row]["name"]!
+        var imageUrl = ""
+        var name = ""
+        for friendID in friendInformationList{
+            if (friendID["id"] == friendIDList[indexPath.row]) {
+                imageUrl = friendID["imageUrl"]!
+                name = friendID["name"]!
+            }
+        }
+        cell.profileImage.image = getImageByUrl(url: imageUrl)
+        cell.nameLabel.text = name
         return cell
     }
     

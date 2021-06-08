@@ -101,7 +101,7 @@ class readQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     func found(newFriendUserName: String) {
         let docRef = db.collection("users").document(newFriendUserName)
         docRef.getDocument { (document, error) in
-            if let document = document, document.exists{
+            if let document = document, document.exists, newFriendUserName != UserDefaults.standard.string(forKey:"currentUser")!{
                 
                 let alert = UIAlertController(title: "友だち追加", message: (document.data()!["name"] as? String)!+"を友だち追加しますか？", preferredStyle: .alert)
                 

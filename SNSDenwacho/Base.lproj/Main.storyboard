@@ -807,13 +807,28 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gp4-fH-0m5">
                                         <rect key="frame" x="0.0" y="544" width="414" height="181"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bq-WT-gz0">
-                                                <rect key="frame" x="163" y="96" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bq-WT-gz0">
+                                                <rect key="frame" x="168.5" y="75.5" width="77" height="30"/>
+                                                <state key="normal" title="ログアウト"/>
+                                                <connections>
+                                                    <action selector="tapLogoutButton" destination="4Df-xk-DDr" eventType="touchUpInside" id="fGx-Ob-7XP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEW-Wc-f3C">
+                                                <rect key="frame" x="138" y="75.5" width="138" height="30"/>
+                                                <state key="normal" title="友達リストから削除"/>
+                                                <connections>
+                                                    <action selector="tapDeleteFriendButton" destination="4Df-xk-DDr" eventType="touchUpInside" id="PEw-Rb-3O5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="3bq-WT-gz0" firstAttribute="centerY" secondItem="gp4-fH-0m5" secondAttribute="centerY" id="91D-Gd-aVv"/>
+                                            <constraint firstItem="oEW-Wc-f3C" firstAttribute="centerX" secondItem="gp4-fH-0m5" secondAttribute="centerX" id="AQK-xE-AiB"/>
+                                            <constraint firstItem="3bq-WT-gz0" firstAttribute="centerX" secondItem="gp4-fH-0m5" secondAttribute="centerX" id="Hgr-K5-ndb"/>
+                                            <constraint firstItem="oEW-Wc-f3C" firstAttribute="centerY" secondItem="gp4-fH-0m5" secondAttribute="centerY" id="OZt-kY-hSn"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -847,7 +862,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="deleteFriendButton" destination="oEW-Wc-f3C" id="jVL-Bm-13C"/>
                         <outlet property="editButton" destination="LRn-MS-XuQ" id="oca-2e-WoA"/>
+                        <outlet property="logoutButton" destination="3bq-WT-gz0" id="1Xa-Y0-tKe"/>
                         <outlet property="myQRButtonStackView" destination="FnJ-Q7-F8p" id="db7-Fy-6gS"/>
                         <outlet property="nameLabel" destination="oE8-PO-C0m" id="mjj-iG-4uK"/>
                         <outlet property="navigationbar" destination="8Oh-Oy-cZB" id="veE-Ru-9IX"/>

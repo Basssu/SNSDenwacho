@@ -64,6 +64,9 @@
                                                         <state key="normal" title="プロフィールイメージを設定">
                                                             <color key="titleColor" red="0.38844230769999999" green="0.2532380521" blue="0.7255328298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="setProfileImageButton" destination="afc-5g-Sws" eventType="touchUpInside" id="VIf-hV-ZV4"/>
+                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5o8-s2-ULR">
                                                         <rect key="frame" x="0.0" y="120" width="414" height="30"/>
@@ -104,7 +107,7 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R7e-mR-cUu">
+                                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R7e-mR-cUu">
                                                                         <rect key="frame" x="0.0" y="21" width="384" height="35"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="35" id="VN7-fE-4h8"/>
@@ -211,7 +214,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VnS-zL-wjm">
                                                                 <rect key="frame" x="0.0" y="264" width="384" height="66"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="twitterのユーザーネーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mg1-Vl-JPs">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="twitterのユーザーネーム(任意)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mg1-Vl-JPs">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="aJV-lh-5au"/>
@@ -240,7 +243,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wF0-pA-hee">
                                                                 <rect key="frame" x="0.0" y="330" width="384" height="66"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="instagramのユーザーネーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awi-jU-X0i">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="instagramのユーザーネーム(任意)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awi-jU-X0i">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="SyN-NB-6E2"/>
@@ -269,7 +272,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Rf-Jk-osU">
                                                                 <rect key="frame" x="0.0" y="396" width="384" height="66"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="facebookのリンク" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2B-Oi-OKh">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="facebookのリンク(任意)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2B-Oi-OKh">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="kbe-BC-apJ"/>
@@ -324,6 +327,9 @@
                                                                 <state key="normal" title="この情報でアカウントを作成する">
                                                                     <color key="titleColor" red="0.38844230769999999" green="0.2532380521" blue="0.7255328298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="createAccountbutton" destination="afc-5g-Sws" eventType="touchUpInside" id="YMk-qB-a8f"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hns-25-ne4">
                                                                 <rect key="frame" x="0.0" y="56.5" width="414" height="56.5"/>
@@ -383,6 +389,7 @@
                         <outlet property="nameLabel" destination="7gc-NN-nsw" id="8Wk-MW-VYc"/>
                         <outlet property="passWordLabel" destination="Xgg-wU-C2T" id="HMX-wQ-kcK"/>
                         <outlet property="passWordLabel2" destination="x6i-00-3Dz" id="eVI-lL-qTG"/>
+                        <outlet property="profileImageView" destination="MVD-9B-iyg" id="eDs-Hq-PXp"/>
                         <outlet property="twitterLabel" destination="YVx-TK-icC" id="Gl9-AZ-axK"/>
                         <outlet property="userNameLabel" destination="R7e-mR-cUu" id="73R-mP-O41"/>
                     </connections>

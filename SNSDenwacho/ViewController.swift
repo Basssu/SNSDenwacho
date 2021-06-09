@@ -55,10 +55,12 @@ class ViewController: UIViewController, UITextFieldDelegate ,
     
     @IBAction func createAccountbutton() {
         guard self.userNameLabel.text!.count >= 7 && self.passWordLabel.text!.count >= 7 && self.passWordLabel.text! == self.passWordLabel2.text! else {
+            let alert = UIAlertController(title: "入力情報の不備", message: "ユーザーネームとパスワードは7文字以上を入力してください。", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             return
         }
         let ref = Storage.storage().reference().child("/users/\(userNameLabel.text!)/profileImage.jpg")
-        
         if (self.d != nil){
             let md = StorageMetadata()
             md.contentType = "image/png"

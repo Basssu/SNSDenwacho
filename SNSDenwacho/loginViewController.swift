@@ -29,10 +29,14 @@ class loginViewController: UIViewController {
                     self.userDefaults.set(document.documentID, forKey: "currentUser")
                     self.performSegue(withIdentifier: "toFriendListFromLoginPage", sender: nil)
                 }else{
-                    print("password is not correct")
+                    let alert = UIAlertController(title: "入力情報の不備", message: "ユーザーネーム又はパスワードが間違っています", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
             } else {
-                print("Document does not exist")
+                let alert = UIAlertController(title: "入力情報の不備", message: "ユーザーネーム又はパスワードが間違っています", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
